@@ -1,0 +1,20 @@
+---
+import Header from '../components/Header.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import '../styles/global.css';
+---
+
+<!-- src/layouts/MainLayout.astro -->
+<html>
+  <head>
+    <!-- Add this inside the <head> section -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geist-ui/core@latest/fonts/geist-sans.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geist-ui/core@latest/fonts/geist-mono.css">
+    <!-- Rest of your head content -->
+  </head>
+  <body>
+	<CustomCursor />
+    <Header />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,61 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
+---
+
+<header>
+    <div class="logo">
+      <a href="/" class="logo-link">
+          <Logo />
+      </a>
+      <p>Website under construction</p>
+    </div>
+    <div class="nav">
+      <nav>
+          <!-- <a href="#about">About</a>
+          <a href="#work">Work</a> -->
+          <a href="mailto:fxdecarpentrie@protonmail.com" target="_blank">Contact me</a>
+          <a href="/public/doc/decarpentrie_portfolio_compressed.pdf" target="_blank">Download my portfolio</a>
+      </nav>
+      <ThemeToggle />
+    </div>
+</header>
+
+<script>
+    // Scroll handler for header effect
+    const header = document.querySelector('header');
+
+    const updateHeaderBackground = () => {
+        const scrollY = window.scrollY;
+        const scrollThreshold = 100; // Adjust this value as needed
+        const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+
+        // Calculate scroll progress (0 to 1)
+        const scrollProgress = Math.min(scrollY / scrollThreshold, 1);
+
+        // Update blur and background color based on scroll progress
+        header.style.backdropFilter = `blur(${scrollProgress * 10}px)`; // 0px to 10px blur
+        header.style.backgroundColor = isDarkTheme
+            ? `rgba(0, 0, 0, ${scrollProgress * 1})` // 0 to 0.8 opacity
+            : `rgba(255, 255, 255, ${scrollProgress * 1})`; // 0 to 0.8 opacity
+    };
+
+    // Theme change observer
+    const themeObserver = new MutationObserver(updateHeaderBackground);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+
+    // Attach scroll event listener
+    window.addEventListener('scroll', updateHeaderBackground);
+
+    // Initial check in case page loads with scroll
+    updateHeaderBackground();
+
+    // Cleanup
+    window.addEventListener('beforeunload', () => {
+        themeObserver.disconnect();
+        window.removeEventListener('scroll', updateHeaderBackground);
+    });
+</script>

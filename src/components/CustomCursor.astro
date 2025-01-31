@@ -1,0 +1,57 @@
+<div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
+  
+  <style lang="scss">
+    .cursor {
+      display: none;
+      @media (pointer: fine) {
+        display: block;
+      }
+    }
+  
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100000;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  
+    .cursor-outline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100000;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+  
+  <script>
+    const cursor = {
+      dot: document.querySelector('.cursor-dot') as HTMLElement,
+      outline: document.querySelector('.cursor-outline') as HTMLElement,
+      init: function() {
+        document.addEventListener('mousemove', (e) => {
+          const { clientX, clientY } = e;
+          if (this.dot && this.outline) {
+            this.dot.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
+            this.outline.style.transform = `translate(${clientX - 20}px, ${clientY - 20}px)`;
+          }
+        });
+      }
+    };
+  
+    cursor.init();
+  </script> 
