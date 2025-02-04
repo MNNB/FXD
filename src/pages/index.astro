@@ -4,62 +4,20 @@ import ThreeJSAnimation from '../components/ThreeJSAnimation.js';
 ---
 
 <MainLayout>
-	<section class="hero">
-		<canvas id="threejs-canvas" class="webgl"></canvas>
-		<!-- <div class="hero-content">
-		  <h1>I'm François-Xavier</h1>
-		  <p>A Paris-based Product Designer. My site is under construction.</p>
-		  <a href="#work" class="cta-button">Download my portfolio</a>
-		  <a href="#work" class="cta-button">Say hi!</a>
-		</div> -->
-	</section>
-	
-	  <!-- <section id="about" class="about">
-		<div class="about-content">
-		  <img src="/public/images/projects/me.png" alt="Profile Picture" class="profile-picture" />
-		  <div class="about-text">
-			<h2>About Me</h2>
-			<p>I'm a developer with a passion for building beautiful and functional web applications. I specialize in Astro.js, React, and Three.js.</p>
-			<div class="skills">
-			  <span>JavaScript</span>
-			  <span>React</span>
-			  <span>Astro</span>
-			  <span>Three.js</span>
-			</div>
-		  </div>
-		</div>
-	  </section>
+    <section class="hero">
+        <div class="canvas-container">
+            <canvas class="webgl"></canvas>
+        </div>
+        <div class="hero-content flow">
+            <!-- Add your content here -->
+        </div>
+    </section>
+</MainLayout>
 
-	  <section id="work" class="work">
-		<h2>My Work</h2>
-		<div class="work-grid">
-		  <div class="project-card">
-			<img src="/public/images/projects/me.png" alt="Project 1" />
-			<h3>Project 1</h3>
-			<p>A brief description of the project.</p>
-		  </div>
-		  <div class="project-card">
-			<img src="/public/images/projects/me.png" alt="Project 2" />
-			<h3>Project 2</h3>
-			<p>A brief description of the project.</p>
-		  </div>
-		</div>
-	  </section>
 
-	  <section id="contact" class="contact">
-		<h2>Contact Me</h2>
-		<form class="contact-form">
-		  <input type="text" placeholder="Your Name" required />
-		  <input type="email" placeholder="Your Email" required />
-		  <textarea placeholder="Your Message" rows="5" required></textarea>
-		  <button type="submit">Send Message</button>
-		</form>
-	  </section> -->
 
-	  </MainLayout>
-
-    <script>
-		import ThreeJSAnimation from "../components/ThreeJSAnimation";
-		const canvas = document.querySelector('.webgl');
-        ThreeJSAnimation(canvas);
-    </script>
+<script>
+    import ThreeJSAnimation from "../components/ThreeJSAnimation";
+    const canvas = document.querySelector('.webgl');
+    ThreeJSAnimation(canvas);
+</script>

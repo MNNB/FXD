@@ -78,10 +78,10 @@ export default function initThreeJS(canvas) {
     // Random text placeholders
     const textPlaceholders = [
         "Bonsoir.",
-        "Hello \nWorld!",
-        "Welcome.",
-        "Greetings.",
-        "Hi there!"
+        "Wesh \nMomo!",
+        "ohayo¬",
+        "OKLM.",
+        "Si si, \nla famille!"
     ];
 
     // Select a random text
@@ -168,9 +168,11 @@ export default function initThreeJS(canvas) {
 
     // Responsive handling
     const resizeHandler = () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(width, height);
     };
     window.addEventListener('resize', resizeHandler);
 

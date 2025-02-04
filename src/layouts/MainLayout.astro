@@ -4,17 +4,18 @@ import CustomCursor from '../components/CustomCursor.astro';
 import '../styles/global.css';
 ---
 
-<!-- src/layouts/MainLayout.astro -->
 <html>
   <head>
-    <!-- Add this inside the <head> section -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geist-ui/core@latest/fonts/geist-sans.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geist-ui/core@latest/fonts/geist-mono.css">
-    <!-- Rest of your head content -->
   </head>
   <body>
-	<CustomCursor />
+    <CustomCursor />
     <Header />
-    <slot />
+    
+    <main class="main-layout container">
+      <slot />
+    </main>
   </body>
 </html>
