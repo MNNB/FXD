@@ -92,6 +92,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
+  overflow-x: hidden;
 }
 
 /* Typography */
@@ -627,6 +628,54 @@ body.menu-open .burger-button svg .stroke-shape:nth-child(3) {
   .card {
     padding: 1rem 2rem;
     grid-column: 1 !important;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the start on mobile */
+    }
+  
+    .header .logo {
+      margin-bottom: 1rem; /* Add some space between logo and navigation */
+    }
+  
+    .header .nav-links {
+      display: none; /* Hide desktop navigation on mobile */
+    }
+  
+    .burger-button {
+      display: block; /* Show burger button on mobile */
+    }
+  
+    body.menu-open .nav-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .nav-overlay .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr; /* Single column grid on mobile */
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    /* Ensure grid items don't cause overflow */
+    .grid > * {
+      max-width: 100%;
+      overflow: hidden; /* Or overflow: auto; depending on desired behavior */
+    }
+
+    /* Enable scrolling on the grid container */
+    .grid {
+      overflow: auto;
+    }
   }
 
   /* Mobile navigation */
