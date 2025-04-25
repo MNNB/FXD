@@ -2,7 +2,11 @@
 import LogoContainer from '../components/LogoContainer.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 ---
-
+<>
+    <script is:inline src="./scripts/customCursor.js"></script>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <script is:inline src="./scripts/main.js"></script>
+</>
 <MainLayout>
   <!-- Hero / Intro -->
   <section class="intro flow">
