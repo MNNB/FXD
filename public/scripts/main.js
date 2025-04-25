@@ -75,7 +75,7 @@ let currentColor = '#000000';
 
 // Load background image
 const image = new Image();
-image.src = '/public/images/projects/me.png';
+image.src = '/images/projects/me.png';
 image.onload = () => ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
 // Color selection

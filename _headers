@@ -1,0 +1,14 @@
+/*
+  Content-Type: text/html; charset=utf-8
+/fonts/*
+  Content-Type: font/woff2
+/images/*
+  Content-Type: image/png
+/scripts/*
+  Content-Type: application/javascript
+/styles/*
+  Content-Type: text/css
+/*.css
+  Content-Type: text/css
+/*.js
+  Content-Type: application/javascript
