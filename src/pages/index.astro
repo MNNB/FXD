@@ -1,23 +1,200 @@
 ---
+import LogoContainer from '../components/LogoContainer.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import ThreeJSAnimation from '../components/ThreeJSAnimation.js';
 ---
 
 <MainLayout>
-    <section class="hero">
+  <!-- Hero / Intro -->
+  <section class="intro flow">
+    <p class="small">Salut, I'm Fran&ccedil;ois-Xavier,<br>
+    a business-minded designer in Paris.</p>
+    <p class="big">
+      I turn <strong>product visions into reality</strong><br>
+      by putting design front and center as a key asset for both <strong>businesses</strong>
+      <svg width="1em" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="6771.247 -5519 52 52" style="-webkit-print-color-adjust::exact" class="icon" fill="none"><path d="M6783.532-5517h27.429v3.429h-27.429zm0 44.571h27.429v3.429h-27.429zm37.715-34.285v27.428h-3.429v-27.428zm-44.572 0v27.428h-3.428v-27.428zm6.857 0v27.428h-3.428v-27.428zm27.429-6.857h3.429v3.428h-3.429zm-30.857 0h3.428v3.428h-3.428zm0 37.714h3.428v3.428h-3.428zm6.857 0h3.429v3.428h-3.429zm24 0h3.429v3.428h-3.429zm3.429-3.429h3.428v3.429h-3.428zm-17.358-4.285h6.858v3.428h-6.858zm0-23.572h3.429v3.429h-3.429zm0 3.429v20.143h-3.428v-20.143zm10.286 0v20.143h-3.428v-20.143zm7.072-6.429h3.428v3.429h-3.428zm-27.429-3.428h3.429v3.428h-3.429zm-10.286 3.428h3.429v3.429h-3.429zm0 30.857h3.429v3.429h-3.429zm6.876-30.876 3.429.038-.038 3.428-3.428-.037zm0 30.876 3.429.038-.038 3.428-3.428-.037z" style="fill:#000;fill-opacity:1" class="fills"/><g class="strokes"><g class="outer-stroke-shape"><defs><path d="M6783.532-5517h27.429v3.429h-27.429zm0 44.571h27.429v3.429h-27.429zm37.715-34.285v27.428h-3.429v-27.428zm-44.572 0v27.428h-3.428v-27.428zm6.857 0v27.428h-3.428v-27.428zm27.429-6.857h3.429v3.428h-3.429zm-30.857 0h3.428v3.428h-3.428zm0 37.714h3.428v3.428h-3.428zm6.857 0h3.429v3.428h-3.429zm24 0h3.429v3.428h-3.429zm3.429-3.429h3.428v3.429h-3.428zm-17.358-4.285h6.858v3.428h-6.858zm0-23.572h3.429v3.429h-3.429zm0 3.429v20.143h-3.428v-20.143zm10.286 0v20.143h-3.428v-20.143zm7.072-6.429h3.428v3.429h-3.428zm-27.429-3.428h3.429v3.428h-3.429zm-10.286 3.428h3.429v3.429h-3.429zm0 30.857h3.429v3.429h-3.429zm6.876-30.876 3.429.038-.038 3.428-3.428-.037zm0 30.876 3.429.038-.038 3.428-3.428-.037z" id="a"/><mask id="b" x="6772.04" y="-5518.207" width="50.414" height="50.414" maskUnits="userSpaceOnUse"><use href="#a" style="fill:none;stroke:#fff;stroke-width:1"/><use href="#a" style="fill:#000;stroke:none"/></mask></defs><use href="#a" mask="url(#b)" style="fill:none;stroke-width:1;stroke:#000;stroke-opacity:1"/><use href="#a" style="fill:none;fill-opacity:none;stroke-width:.5;stroke:none;stroke-opacity:1"/></g></g></svg> 
+      and <s>users</s> <strong>customers </strong><svg width="1em" height="1em" viewBox="7593 -6556 38 39" class="icon" fill="none"><path d="M7597-6556h9v4h-9zm21 0h9v4h-9zm-17 21v9h-4v-9zm-4-12h9v4h-9zm25 12v9h-4v-9zm-25 14h9v4h-9zm0-22v22h-4v-22zm21-4h9v4h-9zm-8 4v22h-4v-22zm21 0v22h-4v-22zm-13 22h9v4h-9zm0-22v22h-4v-22z" style="fill:currentColor;fill-opacity:1"/></svg> .<br>
+    </p>
+    <p class="big">  
+      My cultural awareness and open-minded approach help <strong>bring stakeholders together</strong> and <strong>encourage meaningful collaboration</strong>
+      <svg width="1em" height="1em" viewBox="17139 -2484 48.2 43.826" class="icon" fill="none">
+        <rect rx="0" ry="0" x="17145.47" y="-2472.47" transform="rotate(-90 17148.6 -2470.87)" width="6.261" height="3.2" style="fill:#fff;fill-opacity:1"/>
+        <rect rx="0" ry="0" x="17150.035" y="-2477.035" transform="rotate(-90 17151.6 -2475.435)" width="3.13" height="3.2" style="fill:#fff;fill-opacity:1"/>
+        <path d="M17145.4-2484h12.8v3.13h-12.8zm22.4 0h12.8v3.13h-12.8zm-22.4 0h12.8v3.13h-12.8zm22.4 0h12.8v3.13h-12.8zm-28.8 17.217v-10.956h3.2v10.956zm44.8 0v-10.956h3.2v10.956zm-41.6 7.826v-7.826h3.2v7.826zm0 0v-7.826h3.2v7.826zm38.4 0v-7.826h3.2v7.826zm0 0v-7.826h3.2v7.826zm-22.4-21.913h3.2v3.131h-3.2zm3.2 3.131h3.2v3.13h-3.2zm0 34.435h3.2v3.13h-3.2zm3.2-37.566h3.2v3.131h-3.2zm-19.2 21.913h3.2v3.131h-3.2zm0 0h3.2v3.131h-3.2zm32 0h3.2v3.131h-3.2zm-35.2-21.913h3.2v3.131h-3.2zm6.4 25.044h3.2v3.13h-3.2zm32-25.044h3.2v3.131h-3.2zm-3.2 21.913h3.2v3.131h-3.2zm-28.8 3.131h3.2v3.13h-3.2zm-6.4-25.044h3.2v3.131h-3.2zm9.6 28.174h3.2v3.131h-3.2zm22.4-3.13h3.2v3.13h-3.2zm-22.4 3.13h3.2v3.131h-3.2zm3.2 3.131h3.2v3.13h-3.2zm3.2 3.13h3.2v3.131h-3.2zm6.4 0h3.2v3.131h-3.2zm-9.6-3.13h3.2v3.13h-3.2zm25.6-31.305h3.2v3.131h-3.2zm-6.4 25.044h3.2v3.13h-3.2zm-3.2 3.13h3.2v3.131h-3.2zm-3.2 3.131h3.2v3.13h-3.2zm0 0h3.2v3.13h-3.2zm3.2-3.131h3.2v3.131h-3.2zm-3.2-28.174h12.8v21.913h-12.8zm-22.4 0h12.8v21.913h-12.8zm-3.2 3.131h3.2v10.956h-3.2zm38.4 0h3.2v10.956h-3.2zm-22.4 3.13h9.6v28.174h-9.6zm-11.2 7.435v-6.261h3.2v6.261zm3.2-6.261v-3.13h3.2v3.13zm8-4.304h3.2v3.13h-3.2zm-3.2 25.043h3.2v3.131h-3.2zm12.8 0h3.2v3.131h-3.2zm6.4-6.261h3.2v3.131h-3.2zm-25.6 0h3.2v3.131h-3.2zm12.8 12.522h3.2v3.131h-3.2zm3.2-31.304h3.2v3.13h-3.2zm-12.8 18.782h6.4v6.261h-6.4zm16 0h6.4v6.261h-6.4z" style="fill:currentColor;fill-opacity:1"/>
+        <rect rx="0" ry="0" x="17150.035" y="-2477.035" transform="rotate(-90 17151.6 -2475.435)" width="3.13" height="3.2" style="fill:#fff;fill-opacity:1"/>
+        <rect rx="0" ry="0" x="17139.035" y="-2467.035" transform="rotate(-90 17140.6 -2465.435)" width="3.13" height="3.2" style="fill:currentColor;fill-opacity:1"/>
+        <rect rx="0" ry="0" x="17184.035" y="-2467.035" transform="rotate(-90 17185.6 -2465.435)" width="3.13" height="3.2" style="fill:currentColor;fill-opacity:1"/>
+        <rect rx="0" ry="0" x="17145.47" y="-2472.47" transform="rotate(-90 17148.6 -2470.87)" width="6.261" height="3.2" style="fill:#fff;fill-opacity:1"/>
+      </svg>
+      in all kinds of settings.
+    </p>
+  </section>
+
+  <!-- Approach -->
+  <section class="approach flow" id="approach">
+    <h2>Approach</h2>
+
+    <div class="grid">
+      <div class="card light tagline">
+        <h3>Move products forward,<br>not pixels!</h3>
+      </div>
+      <div class="card dark">
+        <svg width="36" height="38.5" viewBox="7526.755 -6664.221 36 38.5" class="icon">
+          <path d="M7534.755-6664.221h20v8h-20zm20 4h4v8.5h-4zm0 22h4v8.5h-4zm4-18h4v22.5h-4zm-32 0h4v22.5h-4zm4-4h4v8.5h-4zm7 10h4v4h-4zm-3.5 20.5h4v4h-4zm16.5 0h4v4h-4zm-9-16.5h13v4h-13zm-11 8h4v8.5h-4zm24 4.5v4h-20v-4z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Unlock New Efficiency</h3>
+        </div>
+        <p>Transform meetings into productive decision-making engines. Structured discussions, visual collaboration tools, and clear objectives save time, minimize debates, and accelerate impactful decisions.</p>
+      </div>
+      <div class="card dark">
+        <svg width="29" height="39" viewBox="7518 -6556 29 39" class="icon">
+          <path d="M7522-6556h21v4h-21zm8 4v12h-4v-12zm13 21v14h-21v-14zm-14 4h-4v4h4zm10-25v12h-4v-12zm-13 8v8h-4v-8zm-4 4v18h-4v-18zm21-4v8h-4v-8zm4 4v18h-4v-18z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Uncover Untold Opportunities</h3>
+        </div>
+        <p>AI-enabled user research goes beyond surface-level data. Qualitative and quantitative methods deeply understand user needs, pain points, and motivations. This uncovers untapped opportunities and drives adoption.</p>
+      </div>
+      <div class="card dark">
+        <svg width="30" height="43.5" viewBox="7559 -6465 30 43.5" class="icon">
+          <path d="M7572-6452h4v4h-4zm-1 26.5h6v4h-6zm-3-22.5h4v9.5h-4zm8 0h4v9.5h-4zm-13-13h4v4h-4zm0 22.5h4v4h-4zm4 0h14v13h-14zm-8-18.5h4v18.5h-4zm22-4h4v4h-4zm0 22.5h4v4h-4zm-14-26.5h14v4h-14zm18 8h4v18.5h-4z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Accelerate Product Development</h3>
+        </div>
+        <p>Guide teams through Design Sprints and collaborative exercises. A structured approach ensures focused, productive workshops with tangible results. Quickly validate concepts, mitigate risks, and move products forward.</p>
+      </div>
+      <div class="card dark">
+        <svg width="45" height="38.5" viewBox="7589 -6729 45 38.5" class="icon">
+          <path d="M7608.5-6729h6v4h-6zm0 29.5h6v9h-6zm-13.5-4h6v13h-6zm33 9h6v4h-6zm-39 0h6v4h-6zm33-9h6v13h-6zm-13.5-17h6v4h-6zm0 9.5h6v3h-6zm-7.5-14v25.5h21v-25.5z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Validate early, iterate fast</h3>
+        </div>
+        <p>AI-driven prototyping tools rapidly create interactive prototypes. Explore design directions, gather early user feedback, and iterate on concepts before development, minimizing risks and maximizing ROI.</p>
+      </div>
+      <div class="card dark">
+        <svg width="39" height="39" viewBox="7593 -6621 39 39" class="icon">
+          <path d="M7602-6621h20.5v17.5H7602zm16.25 5.5h-4v4h4zm-8 0h-4v4h4zm-17.25 12h39v4h-39zm30 17.5h9v4h-9zm-30 0h9v4h-9zm4-8.5v9h-4v-9zm0-26.5v17.5h-4v-17.5zm35 26.5v9h-4v-9zm0-26.5v17.5h-4v-17.5zm-17 21.5v17.5h-4v-17.5zm-9 0v17.5h-4v-17.5zm17 0v17.5h-4v-17.5z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Streamline and Scale</h3>
+        </div>
+        <p>DesignOps principles optimize design workflows, enhance collaboration, and ensure consistency. Clear processes, communication, and the right tools scale design efforts, improve efficiency, and deliver exceptional experiences.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="mailto:bonsoir@f-xd.me" class="button">
+        <svg width="30" height="24" viewBox="6657 -4859 44 36" class="icon">
+          <path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/>
+        </svg>
+        Work with me!
+      </a>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience flow" id="experience">
+    <div class="experience-grid">
+      <div class="experience-content flow">
+        <h2>Experience</h2>
+        <p>10+ years of experience leading teams, conducting research, facilitating workshops, prototyping and crafting digital products and services with a variety of industries (automotive, fashion, finance, cosmetics).</p>
+        <div class="download">
+          <a href="https://drive.proton.me/urls/CEBCJ4CBY8#9uzLdM19qHLU" target="_blank" class="button">
+            <svg width="30" height="24" viewBox="6657 -4859 44 36" class="icon">
+              <path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/>
+            </svg>
+            Download Portfolio (PDF)
+          </a>
+        </div>
+      </div>
+      <div class="highlights flow">
+        <ul class="flow">
+          <li>
+            <svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon">
+              <path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/>
+            </svg>
+            <p>Facilitated and lead 5-day design sprint <a href="https://www.youtube.com/watch?v=-T8F0cJ4rcg" target="_blank">@Valeo CarLab</a> that quickly lead to <a href="https://www.youtube.com/watch?v=jFQ8wxCANic" target="_blank">Valeo Racer</a>, a new extended reality in-car gaming experience.</p>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon">
+              <path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/>
+            </svg>
+            <p>Successfully conducted field user research and testing in Africa that drastically reduced the time to market for the <a href="https://www.youtube.com/watch?v=JzyOdXFmP3E" target="_blank">My Baobab</a> banking app.</p>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon">
+              <path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/>
+            </svg>
+            <p>Designed and conceived <a href="https://play.google.com/store/apps/details?id=com.biogen.mysmachecker" target="_blank">MySMA Checker</a>, a mobile app to track symptoms that was built and shipped in less than 3 months.</p>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon">
+              <path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/>
+            </svg>
+            <p>Lead a team of 5 UX/UI Designers <strong>@Isobar Melbourne</strong>. Set the team's culture, ways of working and best practices that improved collaboration with dev team.</p>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon">
+              <path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/>
+            </svg>
+            <p>I introduced design practices <a href="https://www.epic.net" target="_blank">@EPIC</a> - the belgian multi-award-winning agency - that helped delivering work tailored to client needs and reach new markets.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <LogoContainer />
+  </section>
+  
+  <!-- About -->
+  <section class="about flow" id="about">
+    <div class="about-grid">
+      <div class="about-text flow">
+        <h2>About</h2>
+        <p>I focus on design practice management and what makes design valuable for companies. I've helped startups build SaaS products, worked on a omni-channel ecommerce project in Shanghai and lead the Design team at a microfinance institution between Dakar and Paris.</p>
+        <p>Contact: <a href="mailto:bonsoir@f-xd.me">bonsoir@f-xd.me</a></p>
+        <ul>
+          <li>
+            <a href="https://drive.proton.me/urls/CEBCJ4CBY8#9uzLdM19qHLU" target="_blank" class="button">
+              <svg width="24" height="20" viewBox="6657 -4859 44 36" class="icon">
+                <path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/>
+              </svg>
+              Download my portfolio (PDF)
+            </a>
+          </li>
+          <li>
+            <a href="https://drive.proton.me/urls/NPNDKYF9X0#tZnyfBx9GFcg" target="_blank" class="button">
+              <svg width="24" height="20" viewBox="6657 -4859 44 36" class="icon">
+                <path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/>
+              </svg>
+              Download my CV (PDF)
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="pixel-art flow">
         <div class="canvas-container">
-            <canvas class="webgl"></canvas>
+          <canvas id="pixel-canvas" width="512" height="512"></canvas>
+          <div class="tools flex">
+            <div class="color active" data-color="#000000" style="background-color: var(--color-black)"></div>
+            <div class="color" data-color="#FF0060" style="background-color: var(--color-red)"></div>
+            <div class="color" data-color="#F6FA70" style="background-color: var(--color-yellow)"></div>
+            <div class="color" data-color="#00DFA2" style="background-color: var(--color-teal)"></div>
+            <div class="color" data-color="#0079FF" style="background-color: var(--color-blue)"></div>
+            <button id="erase-button" class="button">Erase</button>
+          </div>
         </div>
-        <div class="hero-content flow">
-            <!-- Add your content here -->
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- More -->
+  <section class="more flow">
+    <div class="flow">
+      <h3>Wait, there's more!</h3>
+      <p>I also enjoy making electronic music, photography and spending time with my 2 daughters. I'm currently learning 3D and animation with Blender.</p>
+      <p>So far, I have lived and worked in France, Japan, China, South Korea and Australia. I speak English, French, Japanese and conversational Chinese.</p>
+    </div>
+  </section>
 </MainLayout>
-
-
-
-<script>
-    import ThreeJSAnimation from "../components/ThreeJSAnimation";
-    const canvas = document.querySelector('.webgl');
-    ThreeJSAnimation(canvas);
-</script>

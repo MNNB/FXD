@@ -1,57 +1,45 @@
 <div class="cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+  <div class="cursor-dot">
+    <svg width="8" xmlns="http://www.w3.org/2000/svg" height="8" viewBox="6672.5 -4926.5 7 7" style="-webkit-print-color-adjust::exact" fill="none"><path d="M6673.5-4925.5h5v5h-5zm1-1h3v1h-3zm5 2v3h-1v-3zm-5 4h3v1h-3zm-1-4v3h-1v-3z" style="fill:#fff;fill-opacity:1" class="fills"/></svg>
   </div>
-  
-  <style lang="scss">
-    .cursor {
-      display: none;
-      @media (pointer: fine) {
-        display: block;
-      }
+  <div class="cursor-outline">
+    <svg width="40" xmlns="http://www.w3.org/2000/svg" height="40" viewBox="6657 -4942 38 38" style="-webkit-print-color-adjust::exact" fill="none"><path d="M6671-4942h10v2h-10zm24 14v10h-2v-10zm-24 22h10v2h-10zm-12-22v10h-2v-10zm2-5v5h-2v-5zm2-2v2h-2v-2h1m2 25h2v2h-2v-1m24.966-1.999.005-2 2 .006-.005 2-1-.003-.006 2-2-.005.003-1 .003-1zl1 .003m-1.929-25.005-2-.006.006-2-.543.007 2.543-.001-.003 1M6664-4937v-1h2v2h-2m-2 25h-1v-2h2v2m27.034-23.996 1 .003-.005 1.993-2 .001.005-2m-1.074 25.998-.003 1-2-.006.006-2 2 .006M6664-4937v2h-2v-2zm29 4v5h-2v-4.993zm-31 22h2v2h-2zm24-27h-5v-2h5zm0 32h-5v-2h5zm-25-12v5h-2v-5zm32 0v5h-2v-5zm-22-20h-5v-2h5zm0 32h-5v-2h5zm17.04-31.001 2 .005-.006 2-1-.003-1-.002.003-1z" style="fill:#fff;fill-opacity:1" class="fills"/></svg>
+  </div>
+</div>
+
+<style lang="scss">
+  .cursor {
+    display: none;
+    @media (pointer: fine) {
+      display: block;
     }
-  
-    .cursor-dot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 8px;
-      height: 8px;
-      background-color: var(--text);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 100000;
-      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-  
-    .cursor-outline {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--text);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 100000;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-  </style>
-  
-  <script>
-    const cursor = {
-      dot: document.querySelector('.cursor-dot') as HTMLElement,
-      outline: document.querySelector('.cursor-outline') as HTMLElement,
-      init: function() {
-        document.addEventListener('mousemove', (e) => {
-          const { clientX, clientY } = e;
-          if (this.dot && this.outline) {
-            this.dot.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
-            this.outline.style.transform = `translate(${clientX - 20}px, ${clientY - 20}px)`;
-          }
-        });
-      }
-    };
-  
-    cursor.init();
-  </script> 
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 100000;
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: difference;
+  }
+
+  .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 100000;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: difference;
+  }
+</style>
+
+<script src="/src/scripts/customCursor.js" defer></script>

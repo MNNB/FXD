@@ -1,40 +1,83 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
 ---
 
 <header class="header">
   <div class="logo">
-    <a href="/" class="logo-link">
-      <Logo />
+    <a href="/" aria-label="Home">
+      <Logo src="/logo.svg" alt="My Logo" />
     </a>
-    <p>Website under construction</p>
+    <p class="construction">WEBSITE UNDER CONSTRUCTION!</p>
   </div>
-  <div class="nav">
-    <button class="burger-menu" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+
+  <!-- Burger button -->
+  <button id="burger-button" aria-label="Menu" class="burger-button" type="button">
+    <!-- Simplified burger SVG -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12" stroke="#000" stroke-width="2" class="stroke-shape"/>
+        <line x1="3" y1="6" x2="21" y2="6" stroke="#000" stroke-width="2" class="stroke-shape"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="#000" stroke-width="2" class="stroke-shape"/>
+      </g>
+    </svg>
+  </button>
+
+  <!-- Desktop navigation -->
+  <nav class="nav-links">
+    <a href="#approach">APPROACH</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#about">ABOUT</a>
+    <!-- <a href="#blog">BLOG</a> -->
+    <svg id="scroll-icon" width="2em" height="2em" viewBox="18266 -2949 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <g>
+        <g>
+          <g class="fills">
+            <path d="M18286.211,-2947.316L18277.789,-2947.316L18277.789,-2949.000L18286.211,-2949.000M18286.211,-2917.000L18277.789,-2917.000L18277.789,-2918.684L18286.211,-2918.684M18267.684,-2937.211L18267.684,-2928.789L18266.000,-2928.789L18266.000,-2937.211L18267.684,-2937.211ZM18269.368,-2941.421L18269.368,-2937.211L18267.684,-2937.211L18267.684,-2941.421L18269.368,-2941.421ZM18271.053,-2943.105L18271.053,-2941.421L18269.368,-2941.421L18269.368,-2943.105L18270.211,-2943.105M18271.895,-2922.053L18273.579,-2922.053L18273.579,-2920.368L18271.895,-2920.368L18271.895,-2921.211M18271.895,-2944.789L18271.895,-2945.632L18273.579,-2945.632L18273.579,-2943.947L18271.895,-2943.947M18270.211,-2922.895L18269.368,-2922.895L18269.368,-2924.579L18271.053,-2924.579L18271.053,-2922.895M18271.895,-2944.789L18271.895,-2943.947L18271.895,-2943.105L18271.053,-2943.105L18270.211,-2943.105L18270.211,-2944.789L18271.895,-2944.789ZM18270.211,-2922.895L18271.053,-2922.895L18271.895,-2922.895L18271.895,-2922.053L18271.895,-2921.211L18270.211,-2921.211L18270.211,-2922.895ZM18269.368,-2928.789L18269.368,-2924.579L18267.684,-2924.579L18267.684,-2928.789L18269.368,-2928.789ZM18277.789,-2945.632L18273.579,-2945.632L18273.579,-2947.316L18277.789,-2947.316L18277.789,-2945.632ZM18277.789,-2918.684L18273.579,-2918.684L18273.579,-2920.368L18277.789,-2920.368L18277.789,-2918.684ZM18273.579,-2920.368L18273.579,-2920.368ZL18273.579,-2920.368ZM18286.211,-2918.684L18286.211,-2918.684ZM18298.000,-2937.211L18298.000,-2937.211ZM18277.789,-2918.684L18286.211,-2918.684L18286.211,-2917.000L18277.789,-2917.000M18277.789,-2949.000L18286.211,-2949.000L18286.211,-2947.316L18277.789,-2947.316M18296.316,-2928.789L18296.316,-2937.211L18298.000,-2937.211L18298.000,-2928.789L18296.316,-2928.789ZM18294.632,-2924.579L18294.632,-2928.789L18296.316,-2928.789L18296.316,-2924.579L18294.632,-2924.579ZM18292.947,-2922.895L18292.947,-2924.579L18294.632,-2924.579L18294.632,-2922.895L18293.789,-2922.895M18292.105,-2943.947L18290.421,-2943.947L18290.421,-2945.632L18292.105,-2945.632L18292.105,-2944.789M18292.105,-2921.211L18292.105,-2920.368L18290.421,-2920.368L18290.421,-2922.053L18292.105,-2922.053M18293.789,-2943.105L18294.632,-2943.105L18294.632,-2941.421L18292.947,-2941.421L18292.947,-2943.105M18292.105,-2921.211L18292.105,-2922.053L18292.105,-2922.895L18292.947,-2922.895L18293.789,-2922.895L18293.789,-2921.211L18292.105,-2921.211ZM18293.789,-2943.105L18292.947,-2943.105L18292.105,-2943.105L18292.105,-2943.947L18292.105,-2944.789L18293.789,-2944.789L18293.789,-2943.105ZM18294.632,-2937.211L18294.632,-2941.421L18296.316,-2941.421L18296.316,-2937.211L18294.632,-2937.211ZM18286.211,-2920.368L18290.421,-2920.368L18290.421,-2918.684L18286.211,-2918.684L18286.211,-2920.368ZM18286.211,-2947.316L18290.421,-2947.316L18290.421,-2945.632L18286.211,-2945.632L18286.211,-2947.316ZM18290.421,-2945.632L18290.421,-2945.632ZL18290.421,-2945.632ZM18277.789,-2947.316L18277.789,-2947.316ZM18266.000,-2928.789L18266.000,-2928.789ZM18273.579,-2947.703L18290.421,-2947.703L18290.421,-2918.297L18273.579,-2918.297L18273.579,-2947.703ZM18296.316,-2941.649L18296.316,-2924.351L18267.684,-2924.351L18267.684,-2941.649L18296.316,-2941.649ZM18271.053,-2944.243L18273.579,-2944.243L18273.579,-2941.649L18271.053,-2941.649L18271.053,-2944.243ZM18271.053,-2924.351L18273.579,-2924.351L18273.579,-2921.757L18271.053,-2921.757L18271.053,-2924.351ZM18290.421,-2944.243L18292.947,-2944.243L18292.947,-2941.649L18290.421,-2941.649L18290.421,-2944.243ZM18290.421,-2924.351L18292.947,-2924.351L18292.947,-2921.757L18290.421,-2921.757L18290.421,-2924.351Z" fill="#000"/>
+          </g>
+        </g>
+        <g id="dot-group">
+          <rect x="18280.3" y="-2946.4" width="3.4" height="3.4" fill="#fff"/>
+        </g>
+      </g>
+    </svg>
+  </nav>
+
+  <!-- Overlay menu -->
+  <div class="nav-overlay" id="nav-overlay">
     <nav class="nav-links">
-      <a href="mailto:fxdecarpentrie@protonmail.com" target="_blank">Contact me</a>
-      <a href="/public/doc/decarpentrie_portfolio_compressed.pdf" target="_blank">Download my portfolio</a>
-      <ThemeToggle />
+      <a href="#approach">APPROACH</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#blog">BLOG</a>
+      <a href="#about">ABOUT</a>
     </nav>
   </div>
+
+  <script>
+    // Scroll icon rotation
+    const dotGroup = document.getElementById('scroll-icon')?.querySelector('#dot-group') as SVGGElement;
+
+    function updateDotRotation() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+      const angle = scrollPercent * 360;
+      dotGroup?.setAttribute('transform', `rotate(${angle} 18282 -2933)`);
+    }
+
+    updateDotRotation();
+
+    window.addEventListener('scroll', updateDotRotation);
+    window.addEventListener('resize', updateDotRotation);
+
+    // Burger menu toggle
+    const burgerButton = document.getElementById('burger-button');
+    
+    if (burgerButton) {
+      burgerButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.classList.toggle('menu-open');
+        console.log('Burger clicked, menu-open class toggled');
+      });
+    }
+  </script>
 </header>
-
-<script>
-  // Burger menu toggle
-  const burgerMenu = document.querySelector('.burger-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (burgerMenu && navLinks) {
-    burgerMenu.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      burgerMenu.classList.toggle('active');
-    });
-  } else {
-    console.error('Burger menu or nav links not found in the DOM.');
-  }
-</script>
