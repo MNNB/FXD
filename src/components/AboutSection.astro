@@ -1,0 +1,126 @@
+---
+import PixelArt from './PixelArt.astro';
+
+const downloadButtonIconSVG = `<svg width="24" height="20" viewBox="6657 -4859 44 36" class="icon"><path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/></svg>`;
+---
+
+<section class="about flow" id="about">
+  <div class="about-grid">
+    <div class="about-text flow">
+      <h2>About</h2>
+      <p>I focus on design practice management and what makes design valuable for companies. I\'ve helped startups build SaaS products, worked on a omni-channel ecommerce project in Shanghai and lead the Design team at a microfinance institution between Dakar and Paris.</p>
+      <p>Contact: <a href="mailto:bonsoir@f-xd.me">bonsoir@f-xd.me</a></p>
+      <ul class="download-links"> {/* Added a class for specific targeting if needed */}
+        <li>
+          <a href="https://drive.proton.me/urls/CEBCJ4CBY8#9uzLdM19qHLU" target="_blank" class="button download-button"> {/* Added download-button class */}
+            <Fragment set:html={downloadButtonIconSVG} />
+            Download my portfolio (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="https://drive.proton.me/urls/NPNDKYF9X0#tZnyfBx9GFcg" target="_blank" class="button download-button"> {/* Added download-button class */}
+            <Fragment set:html={downloadButtonIconSVG} />
+            Download my CV (PDF)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <PixelArt />
+  </div>
+</section>
+
+<style>
+  .about {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Full-bleed background */
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    /* Global 'section' rule handles horizontal padding on larger screens */
+    /* The 'flow' class is on the root here */
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: var(--space-lg);
+    align-items: center; /* Vertically align items in grid cells */
+    max-width: 1440px; /* Align with .container max-width */
+    margin: 0 auto; /* Center the grid */
+    padding: 0 var(--space-lg); /* Horizontal padding for content within the full-bleed section */
+  }
+
+  .about-text {
+    /* The 'flow' class handles spacing of p, ul etc. */
+  }
+  
+  .about-text ul.download-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack buttons */
+    gap: var(--space-sm); /* Space between buttons */
+    margin-top: var(--space-md); /* Space above the buttons list */
+  }
+
+  .about-text ul.download-links li a.download-button {
+    font-family: var(--font-mono);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    gap: var(--space-xs);
+    transition: all var(--transition-base);
+    color: var(--color-white) !important; /* Text color for dark background */
+    border: 4px double var(--color-white) !important;
+    box-shadow: 0 0 0 2px var(--color-black) !important; /* Inner shadow effect simulating the original */
+    background: var(--color-black); /* To match parent section */
+    text-decoration: none;
+  }
+
+  .about-text ul.download-links li a.download-button:hover {
+    background-color: var(--color-white) !important;
+    color: var(--color-black) !important;
+    border: 4px double var(--color-black) !important;
+    box-shadow: 0 0 0 2px var(--color-white) !important;
+  }
+
+  .about-text ul.download-links li a.download-button > :global(svg) {
+    width: 1.2em !important; /* Adjusted for button context */
+    height: 1.2em !important;
+    fill: currentColor;
+    transition: fill var(--transition-base);
+  }
+   .about-text a { /* Specific link color for this section if default isn't white */
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+  .about-text a:hover {
+    color: var(--color-light-gray);
+  }
+
+  @media (max-width: 768px) {
+    .about {
+       padding-left: 1rem; /* Global responsive padding for sections */
+       padding-right: 1rem;
+       margin-left: 0; /* Remove full-bleed effect if not desired on mobile */
+       width: 100%; 
+    }
+    .about-grid {
+      grid-template-columns: 1fr; /* Stack columns */
+      padding: 0; /* Reset padding as section now handles it */
+      gap: var(--space-md); /* Adjust gap for stacked layout */
+    }
+    .about-text ul.download-links {
+        align-items: center; /* Center buttons when stacked */
+    }
+    .about-text ul.download-links li a.download-button {
+        display: flex; /* ensure it takes content width */
+        justify-content: center;
+    }
+     .pixel-art { /* The component itself is already responsive */
+        margin-top: var(--space-md);
+    }
+  }
+</style>

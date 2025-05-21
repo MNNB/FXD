@@ -6,12 +6,12 @@
   1. Variables
   2. Reset
   3. Base Styles
-  4. Layout Components
-  5. UI Components
-  6. Page Sections
+  4. Layout Components (Now mostly empty or for very generic layouts)
+  5. UI Components (For truly global, un-componentized UI elements)
+  6. Page Sections (Now empty as all sections are components)
   7. Utilities
-  8. Animations
-  9. Responsive
+  8. Animations (Global animations not tied to specific components)
+  9. Responsive (Global responsive base adjustments)
 */
 
 /* ========================================================================== */
@@ -43,8 +43,8 @@
   
   --background: var(--color-white);
   --text: var(--color-text);
-  --logo-color: var(--color-black);
-  --logo-color-menu-open: var(--color-white);
+  --logo-color: var(--color-black); /* Base logo color */
+  --logo-color-menu-open: var(--color-white); /* Logo color when mobile menu is open */
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -57,11 +57,11 @@
 
   /* Z-index */
   --z-base: 1;
-  --z-header: 1000;
-  --z-overlay: 1000;
+  --z-header: 1000; /* Base z-index for header component */
+  --z-overlay: 1000; /* Base z-index for nav overlay component */
   --z-back-to-top: 1001;
-  --z-burger: 1100;
-  --z-logo: 1101;
+  --z-burger: 1100; 
+  --z-logo: 1101; 
 }
 
 /* ========================================================================== */
@@ -72,7 +72,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: solid 1px salmon; Debug - remove in production */
 }
 
 html {
@@ -91,7 +90,7 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
+  cursor: none; 
   overflow-x: hidden;
 }
 
@@ -102,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-sm);
 }
 
-h2 {
+h2 { 
   font-size: 5rem;
   font-weight: 950;
 }
@@ -134,7 +133,7 @@ ul {
   max-width: 1440px;
 }
 
-section {
+section { 
   padding: var(--space-lg) 0;
 }
 
@@ -146,110 +145,14 @@ section {
 /*                            4. LAYOUT COMPONENTS                            */
 /* ========================================================================== */
 
-/* Grid System */
-.grid {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  gap: 2px;
-  background-color: var(--color-white);
-}
-
-/* Card Layout */
-.card {
-  padding: 2.5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
-
-.card .icon {
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: var(--space-sm);
-}
-
-.card p {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-md);
-}
-
-.card h3 {
-  font-family: var(--font-mono);
-  font-weight: bolder;
-}
-
-.card.light h3 {
-  font-size: var(--font-size-xl);
-}
-.card.dark h3 {
-  font-size: var(--font-size-lg);
-}
-
-.card.light {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-
-.card.dark .icon {
-  fill: var(--color-white);
-}
-
-/* Grid card positions */
-.card:nth-child(n) { grid-area: auto; }
+/* All specific layout components moved to their respective .astro files */
 
 /* ========================================================================== */
 /*                            5. UI COMPONENTS                                */
 /* ========================================================================== */
 
-/* Header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-sm) 4em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--background);
-  z-index: var(--z-header);
-}
-
-.header .logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-  width: auto;
-  z-index: var(--z-logo);
-}
-
-.header .logo svg {
-  height: 1.2rem;
-  width: auto;
-}
-
-.header .nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-}
-
-.construction {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-  margin-left: var(--space-md);
-}
+/* Header styles moved to Header.astro */
+/* Construction styles moved to Header.astro */
 
 /* Footer */
 .footer {
@@ -289,7 +192,6 @@ section {
   gap: var(--space-md);
 }
 
-/* CTA Buttons */
 .button {
   font-family: var(--font-mono);
   padding: var(--space-xs) var(--space-sm);
@@ -299,93 +201,8 @@ section {
   cursor: pointer;
 }
 
-.cta {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  background-color: var(--color-black);
-  margin-top: 2px;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.cta a,
-.download a {
-  font-family: var(--font-mono);
-  padding: var(--space-xs) var(--space-sm);
-  display: inline-block;
-  transition: all var(--transition-base);
-}
-
-.cta a {
-  color: var(--color-white) !important;
-  border: 4px double var(--color-white) !important;
-  box-shadow: 0 0 0 2px var(--color-black) !important;
-}
-
-.download a {
-  color: var(--color-black) !important;
-  border: 4px double var(--color-black) !important;
-  box-shadow: 0 0 0 2px var(--color-white) !important;
-}
-
-/* Hover states */
-.cta a:hover {
-  background-color: var(--color-white) !important;
-  color: var(--color-black) !important;
-  border: 4px double var(--color-black) !important;
-  box-shadow: 0 0 0 2px var(--color-white) !important;
-}
-
-.download a:hover {
-  background-color: var(--color-black) !important;
-  color: var(--color-white) !important;
-  border: 4px double var(--color-white) !important;
-  box-shadow: 0 0 0 2px var(--color-black) !important;
-}
-
-/* SVG icons */
-.icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-  fill: currentColor;
-}
-
-.cta a svg,
-.download a svg {
-  transition: fill var(--transition-base);
-}
-
-/* Burger Menu */
-.burger-button {
-  display: none;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: var(--z-burger);
-  padding: var(--space-xs);
-}
-
-.nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--color-black);
-  color: var(--color-white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-base);
-  z-index: var(--z-overlay);
-}
+/* Burger Menu styles moved to Header.astro */
+/* Nav Overlay styles moved to Header.astro */
 
 /* Back to Top */
 .back-to-top {
@@ -405,149 +222,11 @@ section {
   pointer-events: auto;
 }
 
-/* Pixel Art Canvas */
-.pixel-art {
-  position: relative;
-  max-width: 512px;
-  margin: 0 auto;
-}
-
-.canvas-container {
-  position: relative;
-}
-
-#pixel-canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  image-rendering: pixelated;
-  cursor: crosshair;
-  background: var(--color-white);
-}
-
-.tools {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.color {
-  width: 1.5rem;
-  height: 1.5rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.color.active {
-  border-color: var(--color-black);
-}
-
-#erase-button {
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 4px;
-  background: var(--color-white);
-}
-
 /* ========================================================================== */
 /*                            6. PAGE SECTIONS                                */
 /* ========================================================================== */
 
-/* Intro Section */
-.intro {
-  width: 50%;
-  margin-top: 8rem;
-  text-align: left;
-}
-
-.intro .small {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-md);
-  color: var(--color-gray);
-  margin-bottom: var(--space-sm);
-}
-
-.intro .big {
-  font-size: var(--font-size-lg);
-  font-family: var(--font-sans);
-  line-height: 1.4;
-}
-
-/* About Section */
-.about {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: var(--space-lg) 4rem;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: center;
-}
-
-/* Experience Section */
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
-  align-items: start;
-}
-
-.bullet-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.highlights ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.highlights li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-xs);
-}
-
-.highlights p {
-  width: 100%;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-}
-
-.highlights a {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Approach Section */
-
-
-
-/* More Section */
-
-.more {
-  width: 50%;
-}
-
-.more p {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  color: var(--color-gray);
-}
+/* All page section styles moved to their respective .astro files */
 
 /* ========================================================================== */
 /*                            7. UTILITIES                                    */
@@ -568,18 +247,7 @@ section {
 /*                            8. ANIMATIONS                                   */
 /* ========================================================================== */
 
-/* Burger to X animation */
-body.menu-open .burger-button svg .stroke-shape:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-body.menu-open .burger-button svg .stroke-shape:nth-child(2) {
-  opacity: 0;
-}
-
-body.menu-open .burger-button svg .stroke-shape:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
+/* Burger to X animation moved to Header.astro */
 
 /* ========================================================================== */
 /*                            9. RESPONSIVE                                   */
@@ -588,7 +256,7 @@ body.menu-open .burger-button svg .stroke-shape:nth-child(3) {
 @media (max-width: 768px) {
   /* Base adjustments */
   body {
-    text-align: center;
+    text-align: center; 
   }
 
   h2 {
@@ -598,106 +266,21 @@ body.menu-open .burger-button svg .stroke-shape:nth-child(3) {
   .container,
   section,
   .footer,
-  .about,
-  .cta {
+  .about, 
+  .cta { 
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
-  /* Layout adjustments */
-  .grid,
-  .approach .grid,
-  .experience-grid,
-  .about-grid,
-  .more {
-    grid-template-columns: 1fr;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  /* Component adjustments */
-  .header {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
+  
+  /* Footer responsive */
   .footer-content {
     flex-direction: column;
   }
-
-  .card {
-    padding: 1rem 2rem;
-    grid-column: 1 !important;
-  }
-  
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start; /* Align items to the start on mobile */
-    }
-  
-    .header .logo {
-      margin-bottom: 1rem; /* Add some space between logo and navigation */
-    }
-  
-    .header .nav-links {
-      display: none; /* Hide desktop navigation on mobile */
-    }
-  
-    .burger-button {
-      display: block; /* Show burger button on mobile */
-    }
-  
-    body.menu-open .nav-overlay {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  
-    .nav-overlay .nav-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-  
-    .grid {
-      grid-template-columns: 1fr; /* Single column grid on mobile */
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    /* Ensure grid items don't cause overflow */
-    .grid > * {
-      max-width: 100%;
-      overflow: hidden; /* Or overflow: auto; depending on desired behavior */
-    }
-
-    /* Enable scrolling on the grid container */
-    .grid {
-      overflow: auto;
-    }
+  .footer {
+      padding: var(--space-md) 1rem; /* Adjust footer padding for mobile */
   }
 
-  /* Mobile navigation */
-  .burger-button {
-    display: block;
-  }
-
-  .header > .nav-links {
-    display: none;
-  }
+  /* All other component-specific responsive styles are within components */
 }
 
-/* Menu open states */
-body.menu-open {
-  --logo-color: var(--logo-color-menu-open);
-}
-
-body.menu-open .nav-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-body.menu-open #scroll-icon {
-  display: none;
-}
+/* Menu open states moved to Header.astro */

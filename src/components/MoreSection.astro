@@ -1,0 +1,49 @@
+---
+// No props needed for this simple section
+---
+<section class="more flow">
+  <div class="flow"> {/* Retain inner flow div if it provides specific margin/padding not covered by section's flow */}
+    <h3>Wait, there's more!</h3>
+    <p>I also enjoy making electronic music, photography and spending time with my 2 daughters. I'm currently learning 3D and animation with Blender.</p>
+    <p>So far, I have lived and worked in France, Japan, China, South Korea and Australia. I speak English, French, Japanese and conversational Chinese.</p>
+  </div>
+</section>
+
+<style>
+  .more {
+    width: 50%; /* Original style */
+    /* The global 'section' rule will provide base padding.
+       The 'flow' class on the root <section> will space its direct children.
+       The inner .flow div also uses this utility.
+    */
+    margin-left: auto; /* Centering a 50% width block if that's the intent */
+    margin-right: auto; /* Or adjust if it should be aligned left within a larger container */
+     padding-left: var(--space-lg); /* Ensure consistent padding if not full-bleed */
+    padding-right: var(--space-lg);
+  }
+
+  .more p {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+  }
+  
+  .more h3 { /* Assuming h3 styling is consistent with global or should be defined here */
+     font-size: var(--font-size-lg); /* Example, adjust as needed */
+     margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .more {
+      width: 100%; /* Full width on mobile */
+      padding-left: 1rem; /* Standard mobile padding */
+      padding-right: 1rem;
+      margin-left: 0; /* Reset margin for mobile if centered on desktop */
+      margin-right: 0;
+    }
+    .more h3 {
+        font-size: var(--font-size-md); /* Adjust heading for mobile */
+    }
+    /* .more p font size already uses --font-size-sm, which should be fine for mobile */
+  }
+</style>

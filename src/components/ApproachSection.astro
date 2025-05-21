@@ -1,0 +1,149 @@
+---
+import ApproachCard from './ApproachCard.astro';
+
+// Data for the cards - normally this might come from a CMS or a data file
+const cardsData = [
+  {
+    title: "Move products forward,\n not pixels!",
+    theme: "light",
+    tagline: true,
+    // No icon or content for the tagline card as per original structure
+  },
+  {
+    iconSVG: `<svg width="36" height="38.5" viewBox="7526.755 -6664.221 36 38.5" class="icon"><path d="M7534.755-6664.221h20v8h-20zm20 4h4v8.5h-4zm0 22h4v8.5h-4zm4-18h4v22.5h-4zm-32 0h4v22.5h-4zm4-4h4v8.5h-4zm7 10h4v4h-4zm-3.5 20.5h4v4h-4zm16.5 0h4v4h-4zm-9-16.5h13v4h-13zm-11 8h4v8.5h-4zm24 4.5v4h-20v-4z" fill="currentColor"/></svg>`,
+    title: "Unlock New Efficiency",
+    content: "Transform meetings into productive decision-making engines. Structured discussions, visual collaboration tools, and clear objectives save time, minimize debates, and accelerate impactful decisions.",
+    theme: "dark"
+  },
+  {
+    iconSVG: `<svg width="29" height="39" viewBox="7518 -6556 29 39" class="icon"><path d="M7522-6556h21v4h-21zm8 4v12h-4v-12zm13 21v14h-21v-14zm-14 4h-4v4h4zm10-25v12h-4v-12zm-13 8v8h-4v-8zm-4 4v18h-4v-18zm21-4v8h-4v-8zm4 4v18h-4v-18z" fill="currentColor"/></svg>`,
+    title: "Uncover Untold Opportunities",
+    content: "AI-enabled user research goes beyond surface-level data. Qualitative and quantitative methods deeply understand user needs, pain points, and motivations. This uncovers untapped opportunities and drives adoption.",
+    theme: "dark"
+  },
+  {
+    iconSVG: `<svg width="30" height="43.5" viewBox="7559 -6465 30 43.5" class="icon"><path d="M7572-6452h4v4h-4zm-1 26.5h6v4h-6zm-3-22.5h4v9.5h-4zm8 0h4v9.5h-4zm-13-13h4v4h-4zm0 22.5h4v4h-4zm4 0h14v13h-14zm-8-18.5h4v18.5h-4zm22-4h4v4h-4zm0 22.5h4v4h-4zm-14-26.5h14v4h-14zm18 8h4v18.5h-4z" fill="currentColor"/></svg>`,
+    title: "Accelerate Product Development",
+    content: "Guide teams through Design Sprints and collaborative exercises. A structured approach ensures focused, productive workshops with tangible results. Quickly validate concepts, mitigate risks, and move products forward.",
+    theme: "dark"
+  },
+  {
+    iconSVG: `<svg width="45" height="38.5" viewBox="7589 -6729 45 38.5" class="icon"><path d="M7608.5-6729h6v4h-6zm0 29.5h6v9h-6zm-13.5-4h6v13h-6zm33 9h6v4h-6zm-39 0h6v4h-6zm33-9h6v13h-6zm-13.5-17h6v4h-6zm0 9.5h6v3h-6zm-7.5-14v25.5h21v-25.5z" fill="currentColor"/></svg>`,
+    title: "Validate early, iterate fast",
+    content: "AI-driven prototyping tools rapidly create interactive prototypes. Explore design directions, gather early user feedback, and iterate on concepts before development, minimizing risks and maximizing ROI.",
+    theme: "dark"
+  },
+  {
+    iconSVG: `<svg width="39" height="39" viewBox="7593 -6621 39 39" class="icon"><path d="M7602-6621h20.5v17.5H7602zm16.25 5.5h-4v4h4zm-8 0h-4v4h4zm-17.25 12h39v4h-39zm30 17.5h9v4h-9zm-30 0h9v4h-9zm4-8.5v9h-4v-9zm0-26.5v17.5h-4v-17.5zm35 26.5v9h-4v-9zm0-26.5v17.5h-4v-17.5zm-17 21.5v17.5h-4v-17.5zm-9 0v17.5h-4v-17.5zm17 0v17.5h-4v-17.5z" fill="currentColor"/></svg>`,
+    title: "Streamline and Scale",
+    content: "DesignOps principles optimize design workflows, enhance collaboration, and ensure consistency. Clear processes, communication, and the right tools scale design efforts, improve efficiency, and deliver exceptional experiences.",
+    theme: "dark"
+  }
+];
+---
+
+<section class="approach flow" id="approach">
+  <h2>Approach</h2>
+
+  <div class="card-grid"> {/* Changed class from .grid to .card-grid to avoid potential conflict with global .grid if any remains and for clarity */}
+    {cardsData.map(card => (
+      <ApproachCard
+        title={card.title}
+        content={card.content}
+        iconSVG={card.iconSVG}
+        theme={card.theme as 'light' | 'dark'}
+        tagline={card.tagline}
+      />
+    ))}
+  </div>
+
+  <div class="cta-container"> {/* Renamed .cta to .cta-container for clarity */}
+    <a href="mailto:bonsoir@f-xd.me" class="button">
+      <svg width="30" height="24" viewBox="6657 -4859 44 36" class="icon">
+        <path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/>
+      </svg>
+      Work with me!
+    </a>
+  </div>
+</section>
+
+<style>
+  .approach {
+    /* Styles for the section itself, if any, beyond global <section> styles */
+    /* The 'flow' class is handled globally */
+  }
+
+  .card-grid { /* Formerly .grid specific to approach */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default for desktop */
+    grid-auto-rows: auto; /* Or minmax if content varies a lot: minmax(min-content, max-content) or a fixed value */
+    gap: 2px;
+    background-color: var(--color-white); /* Line color between cards */
+  }
+  
+  .card-grid > :global(.card) { /* Targeting the ApproachCard component's root */
+    /* Any specific positioning for cards within this grid, if not handled by card itself or auto-flow */
+  }
+
+  .cta-container { /* Formerly .cta */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: var(--color-black);
+    margin-top: 2px; /* To keep the line from the grid */
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .cta-container a.button { /* Specific styling for this button */
+    font-family: var(--font-mono);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-block;
+    transition: all var(--transition-base);
+    color: var(--color-white) !important; /* Keep important if necessary to override base .button */
+    border: 4px double var(--color-white) !important;
+    box-shadow: 0 0 0 2px var(--color-black) !important;
+  }
+
+  .cta-container a.button:hover {
+    background-color: var(--color-white) !important;
+    color: var(--color-black) !important;
+    border: 4px double var(--color-black) !important;
+    box-shadow: 0 0 0 2px var(--color-white) !important;
+  }
+  
+  .cta-container a.button svg.icon { /* Copied from global.css for local use */
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor; /* SVG will inherit 'a' tag's color */
+    transition: fill var(--transition-base); /* Keep transition if present globally */
+  }
+
+
+  @media (max-width: 768px) {
+    .approach {
+      /* Responsive adjustments for the section padding are global */
+    }
+    .card-grid {
+      grid-template-columns: 1fr; /* Single column for cards on mobile */
+      margin-left: 0;
+      width: 100%;
+      gap: 1rem; /* Adjust gap for mobile */
+      padding: 0 1rem; /* Add padding to the grid container itself on mobile */
+      background-color: transparent; /* Remove background if lines are not desired on mobile */
+    }
+    
+    .card-grid > :global(.card) {
+       /* Ensure cards take full width of their grid cell if not already */
+    }
+
+    .cta-container {
+      padding-left: 1rem; /* Consistent padding with other sections */
+      padding-right: 1rem;
+      margin-left: 0; /* Reset margin-left for mobile */
+      width: 100%;
+    }
+  }
+</style>

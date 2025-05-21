@@ -32,7 +32,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 window.addEventListener('wheel', (e) => {
   targetScroll += e.deltaY;
-  currentScroll = targetScroll;
+  currentScroll = targetScroll; // This might make the scroll a bit jumpy with wheel, consider adjusting targetScroll directly or removing this immediate currentScroll update.
   e.preventDefault();
 }, { passive: false });
 
@@ -51,67 +51,22 @@ document.querySelectorAll('.section-animate').forEach(section => {
   observer.observe(section);
 });
 
+// Back to Top button functionality
 const backToTop = document.getElementById('backToTop');
 if (backToTop) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 100) { // Show button after 100px scroll
       backToTop.classList.add('visible');
     } else {
       backToTop.classList.remove('visible');
     }
   });
 
-  backToTop.addEventListener('click', () => {
-    targetScroll = 0;
+  backToTop.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default anchor behavior if it's a link
+    targetScroll = 0; // Set target for smooth scroll
+    // Smooth scroll will handle the animation via requestAnimationFrame
   });
 }
 
-// Initialize canvas
-const canvas = document.getElementById('pixel-canvas');
-const ctx = canvas.getContext('2d');
-const pixelSize = canvas.width / 64;
-let drawing = false;
-let currentColor = '#000000';
-
-// Load background image
-const image = new Image();
-image.src = '/images/projects/me.png';
-image.onload = () => ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-// Color selection
-const colors = document.querySelectorAll('.color');
-colors.forEach(color => {
-  color.addEventListener('click', (e) => {
-    currentColor = e.target.dataset.color;
-    colors.forEach(c => c.classList.remove('active'));
-    e.target.classList.add('active');
-  });
-});
-
-// Erase functionality
-document.getElementById('erase-button').addEventListener('click', () => {
-  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-});
-
-// Drawing functions
-canvas.addEventListener('mousedown', (e) => {
-  drawing = true;
-  draw(e);
-});
-
-canvas.addEventListener('mouseup', () => drawing = false);
-canvas.addEventListener('mouseout', () => drawing = false);
-
-canvas.addEventListener('mousemove', (e) => {
-  if (!drawing) return;
-  draw(e);
-});
-
-function draw(e) {
-  const rect = canvas.getBoundingClientRect();
-  const x = Math.floor((e.clientX - rect.left) / pixelSize);
-  const y = Math.floor((e.clientY - rect.top) / pixelSize);
-  
-  ctx.fillStyle = currentColor;
-  ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
-}
+// Note: The Pixel Art Canvas JavaScript has been moved to PixelArt.astro component.

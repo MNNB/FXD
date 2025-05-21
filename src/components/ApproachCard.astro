@@ -1,0 +1,97 @@
+---
+export interface Props {
+  title: string;
+  content?: string; 
+  iconSVG?: string; 
+  theme?: 'light' | 'dark';
+  tagline?: boolean; 
+  gridArea?: string; 
+}
+
+const {
+  title,
+  content,
+  iconSVG,
+  theme = 'dark', 
+  tagline = false,
+  gridArea
+} = Astro.props;
+---
+
+<div class:list={['card', theme, { tagline: tagline }]} style={gridArea ? `grid-area: ${gridArea};` : ''}>
+  {iconSVG && <Fragment set:html={iconSVG} />}
+  <div>
+    <h3>{title}</h3>
+  </div>
+  {content && <p>{content}</p>}
+</div>
+
+<style>
+  .card {
+    padding: 2.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: var(--color-black); 
+    color: var(--color-white);
+  }
+
+  /* MODIFIED SELECTOR: Targets direct child SVG with class="icon" */
+  .card > svg.icon { 
+    width: 2rem !important; 
+    height: 2rem !important;
+    margin-bottom: var(--space-sm); /* Desktop: 1rem */
+    fill: currentColor; 
+  }
+
+  .card p {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-md);
+  }
+
+  .card h3 {
+    font-family: var(--font-mono);
+    font-weight: bolder;
+    margin-bottom: var(--space-xs); 
+  }
+
+  .card.tagline h3 { 
+    font-size: var(--font-size-xl);
+  }
+
+  .card:not(.tagline) h3 { 
+    font-size: var(--font-size-lg);
+  }
+  
+  .card.light {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+  /* MODIFIED SELECTOR: For light theme */
+  .card.light > svg.icon { 
+    fill: var(--color-black); 
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      padding: 1.5rem 2rem; 
+    }
+
+    .card.tagline h3 {
+      font-size: var(--font-size-lg); 
+    }
+
+    .card:not(.tagline) h3 {
+      font-size: var(--font-size-md); 
+    }
+
+    /* MODIFIED SELECTOR: For mobile */
+    .card > svg.icon { 
+      width: 1rem !important;
+      height: 1rem !important;
+      margin-bottom: var(--space-xs); /* Mobile: 0.5rem */
+    }
+  }
+</style>

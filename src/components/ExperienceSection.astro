@@ -1,0 +1,119 @@
+---
+import HighlightItem from './HighlightItem.astro';
+import LogoContainer from './LogoContainer.astro'; // Assuming it's in the same components folder
+
+const bulletIconSVG = `<svg width="20" height="20" viewBox="17690 -598 20 20" class="bullet-icon"><path d="M17697.391,-585.391L17695.290,-585.391L17695.290,-587.130L17690.000,-587.130L17690.000,-588.870L17695.290,-588.870L17695.290,-590.609L17697.391,-590.609L17697.391,-592.710L17699.130,-592.710L17699.130,-598.000L17700.870,-598.000L17700.870,-592.710L17702.609,-592.710L17702.609,-590.609L17704.710,-590.609L17704.710,-588.870L17710.000,-588.870L17710.000,-587.130L17704.710,-587.130L17704.710,-585.391L17702.609,-585.391L17702.609,-583.290L17700.870,-583.290L17700.870,-578.000L17699.130,-578.000L17699.130,-583.290L17697.391,-583.290L17697.391,-585.391ZM17694.348,-594.377L17696.087,-594.377L17696.087,-592.638L17694.348,-592.638L17694.348,-594.377ZM17704.638,-594.377L17706.377,-594.377L17706.377,-592.638L17704.638,-592.638L17704.638,-594.377ZM17694.348,-583.217L17696.087,-583.217L17696.087,-581.478L17694.348,-581.478L17694.348,-583.217ZM17704.638,-583.217L17706.377,-583.217L17706.377,-581.478L17704.638,-581.478L17704.638,-583.217Z"/></svg>`;
+
+const experienceHighlights = [
+  {
+    icon: bulletIconSVG,
+    text: `Facilitated and lead 5-day design sprint <a href="https://www.youtube.com/watch?v=-T8F0cJ4rcg" target="_blank">@Valeo CarLab</a> that quickly lead to <a href="https://www.youtube.com/watch?v=jFQ8wxCANic" target="_blank">Valeo Racer</a>, a new extended reality in-car gaming experience.`
+  },
+  {
+    icon: bulletIconSVG,
+    text: `Successfully conducted field user research and testing in Africa that drastically reduced the time to market for the <a href="https://www.youtube.com/watch?v=JzyOdXFmP3E" target="_blank">My Baobab</a> banking app.`
+  },
+  {
+    icon: bulletIconSVG,
+    text: `Designed and conceived <a href="https://play.google.com/store/apps/details?id=com.biogen.mysmachecker" target="_blank">MySMA Checker</a>, a mobile app to track symptoms that was built and shipped in less than 3 months.`
+  },
+  {
+    icon: bulletIconSVG,
+    text: `Lead a team of 5 UX/UI Designers <strong>@Isobar Melbourne</strong>. Set the team\'s culture, ways of working and best practices that improved collaboration with dev team.`
+  },
+  {
+    icon: bulletIconSVG,
+    text: `I introduced design practices <a href="https://www.epic.net" target="_blank">@EPIC</a> - the belgian multi-award-winning agency - that helped delivering work tailored to client needs and reach new markets.`
+  }
+];
+
+const downloadButtonIconSVG = `<svg width="30" height="24" viewBox="6657 -4859 44 36" class="icon"><path d="M6693.000,-4839.000L6697.000,-4839.000L6697.000,-4835.000L6693.000,-4835.000L6693.000,-4839.000ZM6693.000,-4847.000L6697.000,-4847.000L6697.000,-4843.000L6693.000,-4843.000L6693.000,-4847.000ZM6689.000,-4851.000L6693.000,-4851.000L6693.000,-4847.000L6689.000,-4847.000L6689.000,-4851.000ZM6685.000,-4855.000L6689.000,-4855.000L6689.000,-4851.000L6685.000,-4851.000L6685.000,-4855.000ZM6681.000,-4859.000L6685.000,-4859.000L6685.000,-4855.000L6681.000,-4855.000L6681.000,-4859.000ZM6657.000,-4843.000L6701.000,-4843.000L6701.000,-4839.000L6657.000,-4839.000L6657.000,-4843.000ZM6689.000,-4835.000L6693.000,-4835.000L6693.000,-4831.000L6689.000,-4831.000L6689.000,-4835.000ZM6685.000,-4831.000L6689.000,-4831.000L6689.000,-4827.000L6685.000,-4827.000L6685.000,-4831.000ZM6681.000,-4827.000L6685.000,-4827.000L6685.000,-4823.000L6681.000,-4823.000L6681.000,-4827.000Z"/></svg>`;
+---
+
+<section class="experience flow" id="experience">
+  <div class="experience-grid">
+    <div class="experience-content flow">
+      <h2>Experience</h2>
+      <p>10+ years of experience leading teams, conducting research, facilitating workshops, prototyping and crafting digital products and services with a variety of industries (automotive, fashion, finance, cosmetics).</p>
+      <div class="download">
+        <a href="https://drive.proton.me/urls/CEBCJ4CBY8#9uzLdM19qHLU" target="_blank" class="button">
+          <Fragment set:html={downloadButtonIconSVG} />
+          Download Portfolio (PDF)
+        </a>
+      </div>
+    </div>
+    <div class="highlights flow">
+      <ul class="flow">
+        {experienceHighlights.map(item => (
+          <HighlightItem iconSVG={item.icon} text={item.text} />
+        ))}
+      </ul>
+    </div>
+  </div>
+  <LogoContainer />
+</section>
+
+<style>
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Default desktop layout */
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    align-items: start;
+  }
+
+  .experience-content {
+    /* The 'flow' class handles spacing between children */
+  }
+
+  .download a.button {
+    font-family: var(--font-mono);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center;
+    gap: var(--space-xs);
+    transition: all var(--transition-base);
+    color: var(--color-black) !important;
+    border: 4px double var(--color-black) !important;
+    box-shadow: 0 0 0 2px var(--color-white) !important;
+    cursor: pointer; /* Ensure cursor is pointer for 'a' styled as button */
+  }
+
+  .download a.button:hover {
+    background-color: var(--color-black) !important;
+    color: var(--color-white) !important;
+    border: 4px double var(--color-white) !important;
+    box-shadow: 0 0 0 2px var(--color-black) !important;
+  }
+
+  .download a.button > :global(svg) { /* Targeting the SVG from Fragment */
+    width: 1.2em !important; /* Adjusted for button context */
+    height: 1.2em !important;
+    fill: currentColor; /* Inherits color from 'a' tag */
+    transition: fill var(--transition-base);
+  }
+  
+  .highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* The 'flow' class on <ul> handles spacing between <li> items */
+  }
+
+  /* Responsive adjustments for the Experience section */
+  @media (max-width: 768px) {
+    .experience-grid {
+      grid-template-columns: 1fr; /* Stack columns on mobile */
+      /* The global responsive rule will handle padding, no need to repeat here unless specific */
+    }
+    .download {
+      text-align: center; /* Center download button on mobile if desired */
+    }
+    .download a.button {
+      margin-top: var(--space-md); /* Add some space above download button on mobile */
+    }
+    .highlights {
+      margin-top: var(--space-lg); /* Add space above highlights when stacked */
+    }
+  }
+</style>

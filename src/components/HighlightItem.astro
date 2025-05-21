@@ -1,0 +1,58 @@
+---
+export interface Props {
+  iconSVG: string;
+  text: string; // Allows HTML for links
+}
+
+const { iconSVG, text } = Astro.props;
+---
+
+<li>
+  <Fragment set:html={iconSVG} />
+  <p set:html={text}></p>
+</li>
+
+<style>
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  /* Style for the SVG passed as iconSVG */
+  li > :global(svg) { /* Targets the root SVG rendered by Fragment */
+    width: 1rem !important; /* Original .bullet-icon width */
+    height: 1rem !important; /* Original .bullet-icon height */
+    fill: currentColor; /* Or a specific color if needed */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+
+  p {
+    width: 100%; /* Ensure text takes remaining width */
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    line-height: 1.5; /* Consistent line-height */
+  }
+
+  p :global(a) { /* Styling links within the text prop */
+    font-family: var(--font-mono); /* Keep consistent font if desired */
+    font-size: var(--font-size-sm); /* Keep consistent font size */
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--color-text); /* Or a specific link color */
+  }
+  p :global(a:hover) {
+    color: var(--color-light-gray); /* Standard hover */
+  }
+
+  /* Responsive styles for HighlightItem, if any specific needed beyond parent */
+  @media (max-width: 768px) {
+    p {
+      font-size: calc(var(--font-size-sm) * 0.9); /* Slightly smaller on mobile if needed */
+    }
+    li > :global(svg) {
+      margin-top: 0.125em; /* Minor alignment adjustment for smaller text */
+    }
+  }
+</style>
