@@ -1,5 +1,4 @@
 ---
-// Import all logo SVGs directly
 import accorLogo from '../assets/logos/accor.svg';
 import biogenLogo from '../assets/logos/Biogen.svg';
 import lorealLogo from '../assets/logos/loreal.svg';
@@ -19,63 +18,106 @@ const logos = [
 ];
 ---
 
-<div class="logos-container">
-  <div class="logos-group">
-    {logos.map((logo) => (
-      <img
-        src={logo.src}
-        alt={logo.alt}
-        class="logo-item"
-      />
-    ))}
-  </div>
-  <div class="logos-group">
-    {logos.map((logo) => (
-      <img
-        src={logo.src}
-        alt={logo.alt}
-        class="logo-item"
-      />
-    ))}
+<div class="logos-billboard">
+  <div class="logos-track">
+    <div class="logos-group" aria-hidden="true"> 
+      {logos.map((logo) => (
+        <img src={logo.src} alt={logo.alt} class="logo-item" />
+      ))}
+    </div>
+    <div class="logos-group"> 
+      {logos.map((logo) => (
+        <img src={logo.src} alt={logo.alt} class="logo-item" />
+      ))}
+    </div>
   </div>
 </div>
 
 <style>
-.logos-container {
+.logos-billboard {
+  width: 100%; 
+  overflow: hidden; 
+  position: relative; 
+  padding: var(--space-sm) 0; 
+  background-color: transparent; 
+}
+
+/* Left fade effect */
+.logos-billboard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px; /* Adjust width of the fade effect as needed */
+  background: linear-gradient(to right, var(--background) 20%, transparent 100%); /* Fades from page BG to transparent */
+  z-index: 2; /* Ensures it's above the logos-track */
+  pointer-events: none; /* Allows clicks to pass through if necessary */
+}
+
+/* Right fade effect */
+.logos-billboard::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px; /* Adjust width of the fade effect as needed */
+  background: linear-gradient(to left, var(--background) 20%, transparent 100%); /* Fades from page BG to transparent */
+  z-index: 2; /* Ensures it's above the logos-track */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+.logos-track {
   display: flex;
-  width: 100%; /* Ensure container takes full width */
-  position: relative;
+  width: fit-content; 
+  animation: billboard 30s linear infinite;
+  position: relative; /* Ensure track is a positioned element for z-index stacking if needed */
+  z-index: 1; /* Below the fades */
+}
+
+.logos-group {
+  display: flex; 
+  align-items: center;
+  flex-shrink: 0; 
+  gap: 4rem; 
+  padding: 0 2rem; 
 }
 
 .logo-item {
-  /* height: 40px; Consistent height for all logos */
+  height: 30px;
   width: auto;
-  flex-shrink: 0;
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  object-fit: contain; /* Maintain aspect ratio */
+  flex-shrink: 0; 
+  object-fit: contain;
 }
 
-/* Add styling for the logo groups */
-.logos-group {
-  animation: billboard 30s linear infinite; /* Adjust duration as needed */
-  display: flex;
-  align-items: center;
-  gap: 4rem; /* Consistent spacing between logos */
-  padding: 0 1rem; /* Add padding around the group */
-}
-
-/* Keyframes for billboard animation */
 @keyframes billboard {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%); /* Move by the width of one group */
+    transform: translateX(-50%); 
   }
 }
 
-/*.logos-group:hover {
-  animation-play-state: paused; /* Pause animation on hover 
-} */
+.logos-billboard:hover .logos-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .logos-billboard::before,
+  .logos-billboard::after {
+    width: 30px; /* Smaller fade on mobile */
+  }
+  .logos-group {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  .logo-item {
+    height: 25px;
+  }
+  .logos-track {
+    animation-duration: 45s;
+  }
+}
 </style>

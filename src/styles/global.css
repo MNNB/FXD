@@ -20,9 +20,9 @@
 
 :root {
   /* Typography */
-  --font-sans: 'Geist Sans', sans-serif;
-  --font-mono: 'Geist Mono', monospace;
-  
+  --font-sans: "Geist Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
   --font-size-base: 1.125rem;
   --font-size-sm: 0.75rem;
   --font-size-md: 1rem;
@@ -32,19 +32,21 @@
 
   /* Colors */
   --color-white: #ffffff;
-  --color-black: #000000;
+  --color-black: #121212;
   --color-text: #111111;
   --color-gray: #5c5c5c;
   --color-light-gray: #666666;
-  --color-red: #FF0060;
-  --color-yellow: #F6FA70;
-  --color-teal: #00DFA2;
-  --color-blue: #0079FF;
-  
+  --color-red: #ff0060;
+  --color-yellow: #f6fa70;
+  --color-teal: #00dfa2;
+  --color-blue: #0079ff;
+
   --background: var(--color-white);
   --text: var(--color-text);
   --logo-color: var(--color-black); /* Base logo color */
-  --logo-color-menu-open: var(--color-white); /* Logo color when mobile menu is open */
+  --logo-color-menu-open: var(
+    --color-white
+  ); /* Logo color when mobile menu is open */
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -60,8 +62,8 @@
   --z-header: 1000; /* Base z-index for header component */
   --z-overlay: 1000; /* Base z-index for nav overlay component */
   --z-back-to-top: 1001;
-  --z-burger: 1100; 
-  --z-logo: 1101; 
+  --z-burger: 1100;
+  --z-logo: 1101;
 }
 
 /* ========================================================================== */
@@ -90,18 +92,23 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none; 
+  cursor: none;
   overflow-x: hidden;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-mono);
   font-weight: normal;
   margin-bottom: var(--space-sm);
 }
 
-h2 { 
+h2 {
   font-size: 5rem;
   font-weight: 950;
 }
@@ -133,7 +140,7 @@ ul {
   max-width: 1440px;
 }
 
-section { 
+section {
   padding: var(--space-lg) 0;
 }
 
@@ -235,7 +242,9 @@ section {
 .section-animate {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .section-animate.visible {
@@ -256,7 +265,7 @@ section {
 @media (max-width: 768px) {
   /* Base adjustments */
   body {
-    text-align: center; 
+    text-align: center;
   }
 
   h2 {
@@ -266,18 +275,18 @@ section {
   .container,
   section,
   .footer,
-  .about, 
-  .cta { 
+  .about,
+  .cta {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Footer responsive */
   .footer-content {
     flex-direction: column;
   }
   .footer {
-      padding: var(--space-md) 1rem; /* Adjust footer padding for mobile */
+    padding: var(--space-md) 1rem; /* Adjust footer padding for mobile */
   }
 
   /* All other component-specific responsive styles are within components */
