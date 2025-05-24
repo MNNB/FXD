@@ -4,7 +4,7 @@ import ApproachCard from './ApproachCard.astro';
 // Data for the cards - normally this might come from a CMS or a data file
 const cardsData = [
   {
-    title: "Move products forward,\n not pixels!",
+    title: "Move products forward,\nnot pixels!",
     theme: "light",
     tagline: true,
     // No icon or content for the tagline card as per original structure
@@ -128,10 +128,6 @@ const cardsData = [
     }
     .card-grid {
       grid-template-columns: 1fr; /* Single column for cards on mobile */
-      margin-left: 0;
-      width: 100%;
-      gap: 1rem; /* Adjust gap for mobile */
-      padding: 0 1rem; /* Add padding to the grid container itself on mobile */
       background-color: transparent; /* Remove background if lines are not desired on mobile */
     }
     
@@ -142,8 +138,6 @@ const cardsData = [
     .cta-container {
       padding-left: 1rem; /* Consistent padding with other sections */
       padding-right: 1rem;
-      margin-left: 0; /* Reset margin-left for mobile */
-      width: 100%;
     }
   }
 </style>
